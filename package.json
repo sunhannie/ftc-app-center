@@ -1,0 +1,67 @@
+{
+  "name": "ftc-app-center",
+  "version": "1.0.0",
+  "description": "guide to download app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postversion": "git push && git push --tags",
+    "clean": "rm -rf public/*",
+    "build": "node-sass client/main.scss --output-style=compressed public/styles1/main.css",
+    "build-sass": "node-sass client/index.scss  --output-style=compressed ./public/styles/index.css",
+    "build-s": "postcss node-sass postcss-cssnext ./client/*.scss --use postcss-nested postcss-css-variables  --no-map -d ./public/styles/main",
+    "build-js": "rollup -c",
+    "start": "npm run build && nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunhannie/ftc-app-center.git"
+  },
+  "keywords": [
+    "ftc",
+    "app",
+    "center"
+  ],
+  "author": "hehuiyun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunhannie/ftc-app-center/issues"
+  },
+  "homepage": "https://github.com/sunhannie/ftc-app-center#readme",
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "debug": "^3.1.0",
+    "fs-jetpack": "^1.2.0",
+    "got": "^7.1.0",
+    "html-minifier": "^3.5.5",
+    "inline-source": "^5.2.4",
+    "jsdom": "^11.3.0",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.2.1",
+    "koa-session": "^5.8.1",
+    "load-json-file": "^3.0.0",
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1",
+    "moment": "^2.19.1",
+    "moment-timezone": "^0.5.11",
+    "nunjucks": "^3.0.0",
+    "pify": "^3.0.0",
+    "postcss": "^6.0.13",
+    "postcss-cli": "^4.1.1",
+    "postcss-css-variables": "^0.8.0",
+    "postcss-nested": "^2.1.2",
+    "write-json-file": "^2.3.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.4",
+    "koa-static": "^4.0.1",
+    "node-sass": "^4.9.0",
+    "postcss-cssnext": "^3.1.0",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-babel-minify": "^4.0.0",
+    "rollup-plugin-bower-resolve": "^0.5.0"
+  }
+}
